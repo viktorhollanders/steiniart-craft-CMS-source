@@ -1,0 +1,68 @@
+{% extends "_layout.twig" %} 
+
+{% block content %}
+
+<section class="post-header">
+  {% include "partials/_featuredImage.twig" %}
+
+  <div class="post-header__text-container">
+    <h1>{{ entry.title }}</h1>
+    <p class="post-date">{{ entry.postDate | date(" d, M, Y") }}</p>
+  </div>
+</section>
+  
+ <article class="post__container container capped">
+
+  {% for content in entry.blogContent.all() %}
+    {% include "/blog/_content/" ~ content.type %}
+  {% endfor %}
+
+  <section class="tags-container">
+
+    {% set relatedTags = entry.blogTags.all() %}
+
+    {% if relatedTags|length %}
+      <ul class="tags">
+        <p>Þessi póstur byrtist í eftir farandi flokkum</p>
+        {% for rel in relatedTags %}
+            <li class="tag_item"><a href="{{ url('tags/postTags/') }}">{{ rel.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+ 
+ </article>
+
+ 
+
+<section class="button-container button-prev__button-next capped">
+  {# Set parameters for prev/next elements list #}
+  {% set params = craft.entries.section('blog').orderBy('title asc') %}
+
+  {# Get the prev/next elements #}
+  {% set prevEntry = entry.getPrev(params) %}
+  {% set nextEntry = entry.getNext(params) %}
+
+  {# And make sure to only output the links if the element exists #}
+  {% if prevEntry %}
+    <a href="{{ prevEntry.url }}">
+      <button class="button prev-post">
+        <h4>{{ prevEntry.title }}</h4>
+        <div class="line"></div>
+        <p>Fyrri færsla</p>
+      </button>
+    </a>  
+  {% endif %}
+  
+  {% if nextEntry %}
+    <button class="button next-post">
+     <a href="{{ nextEntry.url }}">
+        <h4>{{ nextEntry.title }}</h4>
+        <div class="line"></div>
+        <p>Næsta færsla</p>
+      </a>
+    </button>
+  {% endif %}
+</section>
+
+{% endblock content %}

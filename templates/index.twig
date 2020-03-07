@@ -1,0 +1,40 @@
+{% extends "_layout.twig" %} 
+
+{% block content %} 
+
+<section class="hero capped">
+  <h1 class="hero__title">{{ entry.heroTitle }}</h1>
+  <p>
+    {{ entry.heroText}}
+  </p>
+</section>
+
+<section class="article-container capped">
+
+  {% for entry in craft.entries.section("blog").all() %}
+  <article class="article{% if loop.index0 < 10 %} article--visible{% endif %}">
+    <a class="article-link" href=" {{ entry.url }}">
+      <div class="article-image ">
+        {% include "partials/_featuredImage.twig" %}
+      </div>
+      <h1 class="article-title">{{ entry.title}}</h1>
+     {% set firstTextBlock = entry.blogContent.type("text").one() %}
+     <p>{{ firstTextBlock.text|striptags|slice(0,300) ~ '...' }}</p>
+    </a>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="button-centered">
+  <button class="button more-posts">
+    <h4>Hlaða fleyri færslur</h4>
+    <div class="line"></div>
+  </button>
+</section>
+<script src="/assets/js/morePosts.js"></script>
+{% endblock content %}
+
+ 
+
+
+

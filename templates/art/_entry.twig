@@ -1,0 +1,6 @@
+
+{% block content %}
+  {% for content in entry.aboutImages.all() %}
+     {% include "about/_content/" ~ content.type %}
+  {% endfor %}
+{% endblock content %}

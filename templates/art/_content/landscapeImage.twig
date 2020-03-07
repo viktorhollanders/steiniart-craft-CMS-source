@@ -1,0 +1,12 @@
+{% set image = content.landscapeImage.one() %}
+{% set optemizedImage = image.optemizedImagesLandscape %}
+
+<div class="image-container image__landscape">
+ <picture>
+   <img 
+      src="{{image ? optemizedImage.src }}"  
+      srcset="{{ optemizedImage.srcset() }}"
+      alt="{{ image ? image.title }}"
+    />
+ </picture>
+</div>

@@ -1,0 +1,27 @@
+{% set image = content.portraitImage.all() %}
+
+{% if image|length == 2 %}
+  {% set imageOne =  image[0] %}
+  {% set imageTwo =  image[1] %}
+
+  {% set imageOneOptimized = imageOne.optimceImagesPortrait %}
+  {% set imageTwoOptimized = imageTwo.optimceImagesPortrait %}
+
+  <div class="image-container image__portrait image__portraitDubble">
+    <picture>
+       <img src="{{ image ? imageOneOptimized.src }}" alt="{{ image ? imageOne.title }}" />
+    </picture>
+    <picture>   
+      <img src="{{image ? imageTwoOptimized.src }}" alt="{{ image ? imageTwo.title }}" />
+    </picture>
+  </div>
+{% elseif  image|length == 1 %}
+  {% set imageOne =  image[0] %}
+  {% set imageOneOptimized = imageOne.optimceImagesPortrait %}
+   
+  <div class="image-container image__portrait image__portraitSingle single">
+   <picture> 
+     <img src="{{ image ? imageOneOptimized.src }}" alt="{{ image ? imageOne.title }}" />  
+    </picture>
+  </div>
+{% endif %}

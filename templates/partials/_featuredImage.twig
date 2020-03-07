@@ -1,0 +1,10 @@
+{% set image = entry.featuredImage.one() %}
+{% set optemizedImge = image.optemizedImagesLandscape %}
+
+ <picture>
+  <img 
+   src="{{image ? optemizedImge.src }}" 
+   srcset="{{ optemizedImge.srcset() }}"
+   alt="{{image ? image.title }}"
+  /> 
+ </picture>           

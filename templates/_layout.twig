@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Steini Art</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/articles.css" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/post.css" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/tags.css" type="text/css" />
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo-link" href="/">
+        <img class="logo" src="/assets/icons/SteiniART-logo.png" alt="logo"
+      /></a>
+
+      <button
+        class="toggle-menu"
+        type="button"
+        aria-label="Menu"
+        aria-controls="navigation"
+      >
+        <span class="toggle-menu__line"></span>
+        <span class="toggle-menu__line"></span>
+      </button>
+
+      <nav class="nav overlay">
+        <ul class="nav__items__contaniner">
+          <a href="/">
+            <li class="nav-item">Heim</li>
+          </a>
+          <a href="/about">
+            <li class="nav-item">Listamaðurinn</li>
+          </a>
+        </ul>
+      </nav>
+    </header>
+
+    {% block content %} {% endblock content %}
+
+    <footer class="footer">
+      <div class="socialMedia__container">
+        <a href="" target="_blank">
+          <img
+            class="socialMedia__item"
+            src="/assets/icons/facebook-icon.png"
+            alt="facebook icon"
+          />
+        </a>
+        <a href="" target="_blank">
+          <img
+            class="socialMedia__item"
+            src="/assets/icons/vimeo-icon.png"
+            alt="vimeo icon"
+          />
+        </a>
+        <a href="" target="_blank">
+          <img
+            class="socialMedia__item"
+            src="/assets/icons/youtube-icon.png"
+            alt="youtube icon"
+          />
+        </a>
+      </div>
+
+      {% set d = date('Y') %}
+      <p class="footer__copyright">© {{ "now"|date('Y') }} steiniart</p>
+    </footer>
+
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+  </body>
+</html>

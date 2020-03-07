@@ -1,0 +1,59 @@
+/* ARTICLE */
+
+.article-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 100px;
+
+  margin-top: 100px;
+}
+
+.article {
+  display: none;
+}
+
+.article--visible {
+  display: block;
+}
+
+.article-title {
+  font-size: 24px;
+  text-align: left;
+  margin-top: 32px;
+}
+
+.article-exerpt {
+  line-height: 28px;
+  margin-top: 28px;
+}
+
+.article-image {
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-top: 60%;
+  overflow: hidden;
+}
+
+.article-image img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@media screen and (min-width: 700px) {
+  .article-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 0 70px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .article-container {
+    gap: 100px;
+  }
+}

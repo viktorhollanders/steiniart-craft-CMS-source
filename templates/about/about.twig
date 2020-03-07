@@ -1,0 +1,42 @@
+{% extends "_layout.twig" %} 
+
+{% block content %} 
+
+<section class="hero capped">
+  <h1 class="hero__title">{{ entry.heroTitle }}</h1>
+  <p>
+    {{ entry.heroText}}
+  </p>
+</section>
+
+<section class="button-multiple capped">
+
+  <a href="/art" target="_blank">
+   <button class="button">
+    <h4>Verk</h4>
+    <div class="line"></div>
+   </button>
+  </a>
+
+ {% for asset in entry.cvContent.all() %}
+  <a href="{{ asset.url }}" target="_blank">
+   <button class="button">
+    <h4>Ferilskrá</h4>
+    <div class="line"></div>
+   </button>
+  </a>
+ {% endfor %}
+
+</section>
+
+<article class="artwork-container capped"> 
+ 
+ {% for content in entry.aboutImages.all() %}
+   {% include "about/_content/" ~ content.type %}
+ {% endfor %}
+ 
+</article>
+
+
+
+{% endblock content %} 

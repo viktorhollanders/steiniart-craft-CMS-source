@@ -1,0 +1,39 @@
+{% extends "_layout.twig" %} 
+
+{% block content %}
+
+<section class="tags__hero capped">
+ <h1 class="tags__hero__title">Flokka eftir</h1>
+</section>
+
+<section class="tags__sort capped">
+ {% set tagGroup = craft.tags().group('blogTagGroup') %}
+
+ {# Fetch the tags #}
+ {% set tags = tagGroup.all() %}
+
+ {# Display the tag list #}
+ <ul class="tag-list">
+    <li class="tag-list__item tag-button clear-selection-button" role="button">Allir postar</li>
+  {% for tag in tags %}
+    <li class="tag-list__item tag-button" data-tagid="{{ tag.id }}" role="button">{{ tag.title }}</li>
+  {% endfor %}
+ </ul>
+</section>
+
+<section class="tags__article-container capped">
+  {% for entry in craft.entries.section("blog").all() %}
+  <article class="article" data-postid="{% for tag in entry.blogTags.all() %}{{ tag.id }} {% endfor %}">
+    <a class="article-link" href=" {{ entry.url }}">
+      <div class="article-image ">
+        {% include "partials/_featuredImage.twig" %}
+      </div>
+      <h1 class="article-title">{{ entry.title}}</h1>
+     {% set firstTextBlock = entry.blogContent.type("text").one() %}
+     <p>{{ firstTextBlock.text|striptags|slice(0,150) ~ '...' }}</p>
+    </a>
+  </article>
+  {% endfor %}
+</section>
+<script src="/assets/js/tags.js"></script>
+{% endblock content %}
