@@ -37,6 +37,8 @@ return [
     'dev' => [
         // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
         'devMode' => true,
+        'allowAdminChanges' => true,
+        'allowUpdates' => true,
     ],
 
     // Staging environment settings
@@ -49,6 +51,7 @@ return [
     'production' => [
         // Set this to `false` to prevent administrative changes from being made on production
         'allowAdminChanges' => true,
+        'allowUpdates' => false,
     ],
     
 ];
