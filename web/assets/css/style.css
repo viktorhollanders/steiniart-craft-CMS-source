@@ -22,7 +22,7 @@ body {
 }
 
 body a {
-  color: hsl(236, 100%, 50%);
+  color: hsl(0, 0%, 0%);
   list-style: none;
   text-decoration: none;
 }

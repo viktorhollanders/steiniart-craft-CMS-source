@@ -12,15 +12,12 @@
 		<link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>
 		<link rel="stylesheet" href="/assets/css/articles.css" type="text/css"/>
 		<link rel="stylesheet" href="/assets/css/post.css" type="text/css"/>
-		<link
-		rel="stylesheet" href="/assets/css/tags.css" type="text/css"/>
+		<link rel="stylesheet" href="/assets/css/tags.css" type="text/css"/>
 
 		<!-- google analitics -->
 
-		{% set path = parseEnv(GA_TRACKING_ID) %}
-
-		<script async src="https://www.googletagmanager.com/gtag/js?id={{ GA_TRACKING_ID }}"></script>
-
+		{% set tracking = parseEnv('GA_TRACKING_ID') %}
+		<script async src="https://www.googletagmanager.com/gtag/js?id={{ tracking }}"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 function gtag() {
@@ -28,9 +25,8 @@ dataLayer.push(arguments);
 }
 gtag('js', new Date());
 
-gtag('config', '{{ GA_TRACKING_ID }}');
+gtag('config', '{{ tracking }}');
 		</script>
-
 
 	</head>
 	<body>
