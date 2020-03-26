@@ -9,49 +9,31 @@
  */
 
 return [
-    // Global settings
-    '*' => [
-        // Default Week Start Day (0 = Sunday, 1 = Monday...)
-        'defaultWeekStartDay' => 1,
-
-        // Whether generated URLs should omit "index.php"
-        'omitScriptNameInUrls' => true,
-
-        // Control Panel trigger word
-        'cpTrigger' => 'admin',
-
-        // The secure key Craft will use for hashing and encrypting data
-        'securityKey' => getenv('SECURITY_KEY'),
-
-        // Whether to save the project config out to config/project.yaml
-        // (see https://docs.craftcms.com/v3/project-config.html)
-        'useProjectConfigFile' => false,
-
-        'aliases' => [
+    'aliases' => [
             '@web' => getenv('BASE_URL'),
             '@basePath' => getenv('BASE_PATH'),
         ],
-    ],
-
-    // Dev environment settings
-    'dev' => [
-        // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
-        'devMode' => true,
-        'allowAdminChanges' => true,
-        'allowUpdates' => true,
-    ],
-
-    // Staging environment settings
-    'staging' => [
-        // Set this to `false` to prevent administrative changes from being made on staging
-        'allowAdminChanges' => true,
-    ],
-
-    // Production environment settings
-    'production' => [
-        // Set this to `false` to prevent administrative changes from being made on production
-        'allowAdminChanges' => true,
-        'allowUpdates' => false,
-    ],
+    'allowUpdates' => (bool)getenv('ALLOW_UPDATES'),
+    'allowAdminChanges' => (bool)getenv('ALLOW_ADMIN_CHANGES'),
+    'backupOnUpdate' => (bool)getenv('BACKUP_ON_UPDATE'),
+    'enableTemplateCaching' => (bool)getenv('ENABLE_TEMPLATE_CACHING'),
+    'isSystemLive' => (bool)getenv('IS_SYSTEM_LIVE'),
+    'resourceBasePath' => getenv('WEB_ROOT_PATH').'/cpresources',    
+    'siteUrl' => getenv('SITE_URL'),
     
+
+    // Modes and triggers keys
+    'devMode' => (bool)getenv('DEV_MODE'),
+    'cpTrigger' => getenv('TRIGGER'),
+    'securityKey' => getenv('SECURITY_KEY'),
+
+    // Default Week Start Day (0 = Sunday, 1 = Monday...)
+    'defaultWeekStartDay' => 1,
+
+    // Whether to save the project config out to config/project.yaml
+    // (see https://docs.craftcms.com/v3/project-config.html)
+    'useProjectConfigFile' => false,
+
+    // urls
+    'omitScriptNameInUrls' => true,
 ];
