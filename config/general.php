@@ -10,8 +10,8 @@
 
 return [
     'aliases' => [
-            '@web' => getenv('BASE_URL'),
-            '@basePath' => getenv('BASE_PATH'),
+            '@web' => getenv('SITE_URL'),
+            '@bwebroot' => getenv('WEB_ROOT_PATH'),
         ],
     'allowUpdates' => (bool)getenv('ALLOW_UPDATES'),
     'allowAdminChanges' => (bool)getenv('ALLOW_ADMIN_CHANGES'),
