@@ -13,7 +13,7 @@
 }
 
 .post-header__text-container {
-  color: hsl(100, 100%, 100%);
+  color: #fff;
   text-align: center;
 
   width: 100%;
@@ -65,14 +65,15 @@
 .tag_item a {
   display: inline-block;
   font-weight: 300;
-  color: hsl(0, 100%, 64%);
+  color: #919191;
 
   padding: 7px 9px;
   margin: 0 10px 10px 0;
 }
 
 .tag_item a:hover {
-  border: 1px solid hsl(0, 100%, 64%);
+  color: #000;
+  border: 1px solid #000;
 }
 
 /* next and prev post buttons */
@@ -105,17 +106,13 @@
 
 /* artwork blog post */
 
-.artwork-blog__post-header {
-  color: rgb(0, 0, 0);
-  text-align: center;
-
-  position: relative;
+.artwork-blog {
+  margin-top: -25px;
 }
 
-.artwork-blog_header h1 {
-  margin: 0;
-}
-
-.artwork-blog__post-date {
-  font-style: italic;
+.artwork-blog__text {
+  color: #000;
+  text-align: left;
+  font-weight: 300;
+  letter-spacing: 8%;
 }

@@ -1,42 +1,40 @@
-{% extends "_layout.twig" %} 
+{% extends "_layout.twig" %}
 
-{% block content %} 
+{% block content %}
 
-<section class="hero capped">
-  <h1 class="hero__title">{{ entry.heroTitle }}</h1>
-  <p>
-    {{ entry.heroText}}
-  </p>
-</section>
+	<section class="hero capped">
+		<h1 class="hero__title .hero__title__sub">{{ entry.heroTitle }}</h1>
+		<div class="hero__profile">
+			{% for asset in entry.heroProfileImage %}
+				<img class="hero__profile__image" src="{{ asset.url }}" alt="Profile Picture">
+			{% endfor %}
+			<p class="hero__profile__name">{{ entry.heroProfileName }}</p>
+		</div>
+		<p>
+			{{ entry.heroText}}
+		</p>
+	</section>
 
-<section class="button-multiple capped">
+	<section class="button-centered capped">
 
-  <a href="/art" target="_blank">
-   <button class="button">
-    <h4>Verk</h4>
-    <div class="line"></div>
-   </button>
-  </a>
+		{% for asset in entry.cvContent.all() %}
+			<a href="{{ asset.url }}" target="_blank">
+				<button class="button">
+					<h4>Ferilskrá</h4>
+					<div class="line"></div>
+				</button>
+			</a>
+		{% endfor %}
 
- {% for asset in entry.cvContent.all() %}
-  <a href="{{ asset.url }}" target="_blank">
-   <button class="button">
-    <h4>Ferilskrá</h4>
-    <div class="line"></div>
-   </button>
-  </a>
- {% endfor %}
+	</section>
 
-</section>
+	<article class="artwork-container capped">
 
-<article class="artwork-container capped"> 
- 
- {% for content in entry.aboutImages.all() %}
-   {% include "about/_content/" ~ content.type %}
- {% endfor %}
- 
-</article>
+		{% for content in entry.aboutImages.all() %}
+			{% include "about/_content/" ~ content.type %}
+		{% endfor %}
 
+	</article>
 
 
-{% endblock content %} 
+{% endblock content %}
