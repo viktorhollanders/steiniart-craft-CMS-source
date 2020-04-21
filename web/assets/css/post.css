@@ -118,3 +118,9 @@
 
   margin-top: -25px;
 }
+
+@media screen and (min-width: 700px) {
+  .artwork-blog {
+    margin-bottom: 80px;
+  }
+}
