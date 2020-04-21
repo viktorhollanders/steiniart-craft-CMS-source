@@ -157,7 +157,7 @@ button {
 .header {
   width: 100vw;
   height: 90px;
-  padding: 0 30px;
+  padding: 0 16px;
   background: #fff;
 
   display: flex;
@@ -310,6 +310,12 @@ footer {
 
   .image__portraitDubble {
     flex-direction: row;
+  }
+
+  /* header */
+
+  .header {
+    padding: 0 30px;
   }
 
   /* hero profile */
