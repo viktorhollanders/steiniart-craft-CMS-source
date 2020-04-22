@@ -15,7 +15,7 @@
 		</p>
 	</section>
 
-	<section class="button-centered capped">
+	<section class="button-multiple capped">
 
 		{% for asset in entry.cvContent.all() %}
 			<a href="{{ asset.url }}" target="_blank">
@@ -26,6 +26,12 @@
 			</a>
 		{% endfor %}
 
+		<a href="/art" target="_blank">
+			<button class="button">
+				<h4>Verk</h4>
+				<div class="line"></div>
+			</button>
+		</a>
 	</section>
 
 	<article class="artwork-container capped">

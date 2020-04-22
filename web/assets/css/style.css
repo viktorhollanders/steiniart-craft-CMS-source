@@ -280,11 +280,6 @@ footer {
 /* media queris */
 
 @media screen and (min-width: 500px) {
-  .button-multiple {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
   .image__portrait picture {
     height: 80%;
     overflow: hidden;
@@ -334,10 +329,6 @@ footer {
   .capped {
     padding: 0 12%;
   }
-
-  .button-multiple {
-    justify-content: space-between;
-  }
 }
 
 @media screen and (min-width: 900px) {
@@ -353,7 +344,7 @@ footer {
   /* header */
 
   .nav-item {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   /* hero */
