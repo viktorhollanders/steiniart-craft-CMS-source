@@ -1,10 +1,22 @@
 {% extends "_layout.twig" %}
 
 {% block content %}
+	<section class="hero">
 
-	<section class="hero capped">
-		<h1 class="hero__title hero__title__main">{{ entry.heroTitle }}</h1>
-		<p>
+		<div class="hero__main">
+			{% set image = entry.heroFeatureImage.one() %}
+			{% set optemizedImge = image.optemizedImagesLandscape %}
+
+			<picture>
+				<img src="{{image ? optemizedImge.src }}" srcset="{{ optemizedImge.srcset() }}" alt="{{image ? image.title }}"/>
+			</picture>
+
+			<div class="hero__title__main-background">
+				<h1 class="hero__title__main">{{ entry.heroTitle }}</h1>
+			</div>
+		</div>
+
+		<p class="capped">
 			{{ entry.heroText}}
 		</p>
 	</section>
