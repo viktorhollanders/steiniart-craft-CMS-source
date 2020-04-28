@@ -28,7 +28,7 @@
 					<p>Þessi póstur byrtist í eftir farandi flokkum</p>
 					{% for rel in relatedTags %}
 						<li class="tag_item">
-							<a href="{{ url('partials/postSearch/') }}">{{ rel.title }}</a>
+							<a href="{{ url('postSearch.twig') }}">{{ rel.title }}</a>
 						</li>
 					{% endfor %}
 				</ul>
