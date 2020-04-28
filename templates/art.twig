@@ -24,7 +24,7 @@
 	<section class="art-tags__article-container capped">
 
 		{% for entry in craft.entries.section("artWorkBlog").all() %}
-			<article class="article " data-postid="{% for tag in entry.artTags.all() %}{{ tag.id }} {% endfor %}">
+			<article class="article" data-postid="{% for tag in entry.artTags.all() %}{{ tag.id }} {% endfor %}">
 				{% include "artworkBlog/_entry.twig"%}
 			</article>
 		{% endfor %}

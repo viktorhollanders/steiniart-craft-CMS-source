@@ -240,28 +240,22 @@ button {
   font-size: 50px;
 }
 
-/* hero title */
+/* profile*/
 
-.hero__title__sub {
-  font-size: 32px;
-}
-
-/* hero profile*/
-
-.hero__profile {
+.profile {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.hero__profile__image {
+.profile__image {
   height: 120px;
   width: 120px;
   border-radius: 50%;
   margin-bottom: 24px;
 }
 
-.hero__profile__name {
+.profile__name {
   text-align: center;
   font-weight: 600;
   margin-bottom: 45px;
@@ -323,9 +317,15 @@ footer {
     padding: 0 30px;
   }
 
-  /* hero profile */
+  /* hero main */
 
-  .hero__profile__image {
+  .hero__title__main-background {
+    height: 45%;
+  }
+
+  /* profile */
+
+  .profile__image {
     height: 150px;
     width: 150px;
   }
@@ -379,5 +379,3 @@ footer {
     margin-bottom: 200px;
   }
 }
-
-
