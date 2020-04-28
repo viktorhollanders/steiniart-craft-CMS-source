@@ -1,34 +1,34 @@
-{% extends "_layout.twig" %} 
+{% extends "_layout.twig" %}
 
 {% block content %}
 
-  <section class="hero capped">
-    <h1 class="hero__title">Verk</h1>
-  </section>
+	<section class="hero capped">
+		<h1 class="hero__title">Verk</h1>
+	</section>
 
-  <section class="tags__sort capped">
- {% set tagGroup = craft.tags().group('artTagGroup') %}
+	<section class="tags__sort capped">
+		{% set tagGroup = craft.tags().group('artTagGroup') %}
 
- {# Fetch the tags #}
- {% set tags = tagGroup.all() %}
+		{# Fetch the tags #}
+		{% set tags = tagGroup.all() %}
 
- {# Display the tag list #}
- <ul class="tag-list">
-    <li class="tag-list__item tag-button clear-selection-button" role="button">Allir myndir</li>
-  {% for tag in tags %}
-    <li class="tag-list__item tag-button" data-tagid="{{ tag.id }}" role="button">{{ tag.title }}</li>
-  {% endfor %}
- </ul>
-</section>
+		{# Display the tag list #}
+		<ul class="tag-list">
+			<li class="tag-list__item tag-button clear-selection-button" role="button">Allir myndir</li>
+			{% for tag in tags %}
+				<li class="tag-list__item tag-button" data-tagid="{{ tag.id }}" role="button">{{ tag.title }}</li>
+			{% endfor %}
+		</ul>
+	</section>
 
-<section class="art-tags__article-container capped">
+	<section class="art-tags__article-container capped">
 
-  {% for entry in craft.entries.section("artBlog").all() %}
-    <article class="article" data-postid="{% for tag in entry.artTags.all() %}{{ tag.id }} {% endfor %}">
-      {% include "art/_entry.twig"%}
-    </article>
-  {% endfor %}
-</section>
+		{% for entry in craft.entries.section("artWorkBlog").all() %}
+			<article class="article " data-postid="{% for tag in entry.artTags.all() %}{{ tag.id }} {% endfor %}">
+				{% include "artworkBlog/_entry.twig"%}
+			</article>
+		{% endfor %}
+	</section>
 
-<script src="/assets/js/tags.js"></script>
+	<script src="/assets/js/tags.js"></script>
 {% endblock content %}

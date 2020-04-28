@@ -3,7 +3,7 @@
 {% block content %}
 
 	<section class="post-header">
-		{% include "partials/_featuredImage.twig" %}
+		{% include "_siteContent/_featuredImage.twig" %}
 
 		<div class="post-header__text-container">
 			<h1>{{ entry.title }}</h1>
@@ -14,7 +14,9 @@
 	<article class="post__container container capped">
 
 		{% for content in entry.blogContent.all() %}
-			{% include "/blog/_content/" ~ content.type %}
+			<div class="content-conteinter">
+				{% include "/_siteContent/" ~ content.type %}
+			</div>
 		{% endfor %}
 
 		<section class="tags-container">
@@ -26,7 +28,7 @@
 					<p>Þessi póstur byrtist í eftir farandi flokkum</p>
 					{% for rel in relatedTags %}
 						<li class="tag_item">
-							<a href="{{ url('tags/postTags/') }}">{{ rel.title }}</a>
+							<a href="{{ url('partials/postSearch/') }}">{{ rel.title }}</a>
 						</li>
 					{% endfor %}
 				</ul>
@@ -36,7 +38,8 @@
 	</article>
 
 
-	<section 	class="button-container button-prev__button-next capped">
+	<section
+		class="button-container button-prev__button-next capped">
 		{# Set parameters for prev/next elements list #}
 		{% set params = craft.entries.section('blog').orderBy('title asc') %}
 

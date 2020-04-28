@@ -8,7 +8,7 @@
 			{% set optemizedImge = image.optemizedImagesLandscape %}
 
 			<picture>
-				<img src="{{image ? optemizedImge.src }}" srcset="{{ optemizedImge.srcset() }}" alt="{{image ? image.title }}"/>
+				<img src="{{ image ? optemizedImge.src }}" srcset="{{ optemizedImge.srcset() }}" alt="{{image ? image.title }}"/>
 			</picture>
 
 			<div class="hero__title__main-background">
@@ -27,7 +27,7 @@
 			<article class="article{% if loop.index0 < 10 %} article--visible{% endif %}">
 				<a class="article-link" href=" {{ entry.url }}">
 					<div class="article-image">
-						{% include "partials/_featuredImage.twig" %}
+						{% include "_siteContent/_featuredImage.twig" %}
 					</div>
 					<h1 class="article-title">{{ entry.title}}</h1>
 					{% set firstTextBlock = entry.blogContent.type("text").one() %}

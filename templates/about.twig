@@ -5,7 +5,7 @@
 	<section class="hero capped">
 		<h1 class="hero__title .hero__title__sub">{{ entry.heroTitle }}</h1>
 		<div class="hero__profile">
-			{% for asset in entry.heroProfileImage %}
+			{% for asset in entry.heroProfileImage.all() %}
 				<img class="hero__profile__image" src="{{ asset.url }}" alt="Profile Picture">
 			{% endfor %}
 			<p class="hero__profile__name">{{ entry.heroProfileName }}</p>
@@ -34,7 +34,7 @@
 		</a>
 	</section>
 
-	<article class="artwork-container capped">
+	<article class="about__artwork-container capped">
 
 		{% for content in entry.aboutImages.all() %}
 			{% include "about/_content/" ~ content.type %}

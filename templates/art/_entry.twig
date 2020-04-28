@@ -1,8 +1,0 @@
-{% block content %}
-	<div class="artwork-blog">
-		{% for content in entry.aboutImages.all() %}
-			{% include "about/_content/" ~ content.type %}
-		{% endfor %}
-		<p class="artwork-blog__text">{{ entry.title }}</p>
-	</div>
-{% endblock content %}

@@ -104,23 +104,30 @@
   }
 }
 
-/* artwork blog post */
+/* artwork blog */
 
 .artwork-blog {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
   margin-bottom: 45px;
 }
 
-.artwork-blog__text {
-  color: #000;
-  text-align: left;
-  font-weight: 300;
-  letter-spacing: 8%;
-
-  margin-top: -25px;
+.artworkBlog-text {
+  margin-top: 18px;
 }
 
-@media screen and (min-width: 700px) {
-  .artwork-blog {
-    margin-bottom: 80px;
+.artworkBlog-text__landscape {
+  width: 100%;
+}
+
+.artworkBlog-text__portrait {
+  max-width: 604px;
+}
+
+@media screen and (min-width: 1200px) {
+  .text__landscape {
+    width: 90%;
   }
 }
