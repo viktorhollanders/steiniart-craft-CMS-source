@@ -1,8 +1,8 @@
 {% block content %}
 
 
-	{% for content in entry.artBlogImages.all() %}
-		<div class="artwork-blog">
+	<div class="artwork-blog">
+		{% for content in entry.artBlogImages.all() %}
 			{% include "/_siteContent/" ~ content.type %}
 
 			{% if content >= "800px "%}
@@ -10,7 +10,7 @@
 			{% elseif content < "550px" %}
 				<p class="artworkBlog-text artworkBlog-text__portrait ">{{ entry.title }}</p>
 			{% endif %}
-		</div>
-	{% endfor %}
+		{% endfor %}
+	</div>
 
 {% endblock content %}
