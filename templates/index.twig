@@ -31,7 +31,7 @@
 					</div>
 					<h1 class="article-title">{{ entry.title}}</h1>
 					{% set firstTextBlock = entry.blogContent.type("text").one() %}
-					<p>{{ firstTextBlock.text|striptags|slice(0,300) ~ '...' }}</p>
+					<p>{{ firstTextBlock.text|striptags|slice(0,200) ~ '...' }}</p>
 				</a>
 			</article>
 		{% endfor %}
