@@ -40,7 +40,7 @@ h1 {
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 600;
   text-align: center;
 }
@@ -297,6 +297,12 @@ footer {
 /* media queris */
 
 @media screen and (min-width: 500px) {
+  /* common styles */
+
+  h2 {
+    font-size: 32px;
+  }
+  /* images*/
   .image__portraitDubble .image-wrapper:first-child {
     margin-right: 20px;
     margin-bottom: 0;
