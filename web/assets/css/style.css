@@ -380,7 +380,4 @@ footer {
   .hero__main img {
     height: calc(100vw - 55vw);
   }
-  .hero__main {
-    margin-bottom: 100px;
-  }
 }
