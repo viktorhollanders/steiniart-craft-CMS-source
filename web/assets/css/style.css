@@ -254,12 +254,6 @@ button {
   margin-bottom: 24px;
 }
 
-.profile__name {
-  text-align: center;
-  font-weight: 600;
-  margin-bottom: 45px;
-}
-
 /* footer */
 
 footer {
@@ -387,6 +381,6 @@ footer {
     height: calc(100vw - 55vw);
   }
   .hero__main {
-    margin-bottom: 200px;
+    margin-bottom: 100px;
   }
 }

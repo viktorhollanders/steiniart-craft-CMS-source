@@ -8,7 +8,6 @@
 			{% for asset in entry.profileImage.all() %}
 				<img class="profile__image" src="{{ asset.url }}" alt="Profile Picture">
 			{% endfor %}
-			<p class="profile__name">{{ entry.profileName }}</p>
 		</div>
 		<p>
 			{{ entry.heroText}}

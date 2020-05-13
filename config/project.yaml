@@ -1,4 +1,4 @@
-dateModified: 1588157152
+dateModified: 1589365355
 email:
   fromEmail: viktorhollanders@gmail.com
   fromName: Steiniart
@@ -198,24 +198,6 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: '1'
-      placeholder: ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
-  3cd29255-0395-49b0-892e-2061ec3e17b8:
-    contentColumnType: string(200)
-    fieldGroup: 880d8fa1-9923-450d-8b25-c1aad017ac1c
-    handle: profileName
-    instructions: ''
-    name: 'Profile name'
-    searchable: true
-    settings:
-      byteLimit: null
-      charLimit: 50
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
       placeholder: ''
     translationKeyFormat: null
     translationMethod: none
@@ -981,9 +963,6 @@ sections:
                   37af7934-4ab9-47dc-9ce9-893ee519e51c:
                     required: false
                     sortOrder: 4
-                  3cd29255-0395-49b0-892e-2061ec3e17b8:
-                    required: true
-                    sortOrder: 3
                   532520d3-71b6-483a-a638-329b55a1413f:
                     required: true
                     sortOrder: 2
