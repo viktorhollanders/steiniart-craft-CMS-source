@@ -116,18 +116,5 @@
 
 .artworkBlog-text {
   margin-top: 18px;
-}
-
-.artworkBlog-text__landscape {
-  width: 100%;
-}
-
-.artworkBlog-text__portrait {
   max-width: 604px;
-}
-
-@media screen and (min-width: 1200px) {
-  .text__landscape {
-    width: 90%;
-  }
 }

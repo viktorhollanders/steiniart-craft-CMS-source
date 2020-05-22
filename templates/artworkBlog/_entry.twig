@@ -3,11 +3,7 @@
 		<div class="artwork-blog">
 			{% include "/_siteContent/" ~ content.type %}
 
-			{% if content >= "800px "%}
-				<p class="artworkBlog-text artworkBlog-text__landscape ">{{ entry.title }}</p>
-			{% elseif content < "550px" %}
-				<p class="artworkBlog-text artworkBlog-text__portrait ">{{ entry.title }}</p>
-			{% endif %}
+			<p class="artworkBlog-text">{{ entry.title }}</p>
 		</div>
 	{% endfor %}
 
