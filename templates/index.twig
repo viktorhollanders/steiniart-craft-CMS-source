@@ -24,7 +24,7 @@
 	<section class="article-container capped">
 
 		{% for entry in craft.entries.section("blog").all() %}
-			<article class="article{% if loop.index <= 9 %} article--visible{% endif %}">
+			<article class="article{% if loop.index > 2 %} article--visible{% endif %}">
 				<a class="article-link" href=" {{ entry.url }}">
 					<div class="article-image">
 						{% include "_siteContent/_featuredImage.twig" %}

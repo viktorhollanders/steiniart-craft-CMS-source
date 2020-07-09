@@ -257,15 +257,13 @@ button {
 /* footer */
 
 footer {
-  height: 261px;
+  height: 300px;
   width: 100%;
   background-color: #fff;
-  padding: 0 30px;
   margin-top: 100px;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-around;
 }
 
@@ -280,6 +278,27 @@ footer {
 .socialMedia__item {
   height: 50px;
   width: auto;
+}
+
+.sponsors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sponsors p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #bdbcb9;
+
+  padding-bottom: 24px;
+}
+
+.sponsors img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
 }
 
 .footer__copyright {
@@ -348,6 +367,10 @@ footer {
     font-weight: 900;
     text-transform: uppercase;
     font-size: 50px;
+  }
+
+  footer {
+    height: 500px;
   }
 }
 
