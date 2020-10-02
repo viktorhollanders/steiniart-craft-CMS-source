@@ -283,8 +283,14 @@ footer {
 .sponsors {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sponsors__logo {
+  display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .sponsors p {
