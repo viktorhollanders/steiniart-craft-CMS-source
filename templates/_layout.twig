@@ -14,21 +14,7 @@
 		<link rel="stylesheet" href="/assets/css/blogPost.css" type="text/css"/>
 		<link
 		rel="stylesheet" href="/assets/css/tags.css" type="text/css"/>
-
-		<!-- google analitics -->
-
-		{% set tracking = parseEnv('GA_TRACKING_ID') %}
-		<script async src="https://www.googletagmanager.com/gtag/js?id={{ tracking }}"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-function gtag() {
-dataLayer.push(arguments);
-}
-gtag('js', new Date());
-
-gtag('config', '{{ tracking }}');
-		</script>
-
+	
 	</head>
 	<body>
 		<header class="header">
@@ -59,9 +45,6 @@ gtag('config', '{{ tracking }}');
 			<div class="sponsors">
 				<p>Styrktaraðilar</p>
 				<div class="sponsors__logo">
-					<a href="https://myndlistarsjodur.is/" target="_blank" rel="noreferrer">
-						<img src="/assets/sponsors logo/myndlistasjóður.png" alt="myndlistasjóður"/>
-					</a>
 					<a href="https://www.esveit.is" target="_blank" rel="noreferrer">
 						<img src="/assets/sponsors logo/eyjafjardarsveit.png" alt="Eyjafjarðasveit"/>
 					</a>
