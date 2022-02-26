@@ -219,7 +219,7 @@ button {
 
 .hero__title__main-background {
   background-color: #fff;
-  opacity:77%;
+  opacity: 77%;
   width: 100%;
   height: 60%;
 
@@ -283,8 +283,8 @@ footer {
 .sponsors {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-around;
+  flex-direction: row;
 }
 
 .sponsors__logo {
@@ -303,7 +303,7 @@ footer {
 }
 
 .sponsors img {
-  width: 90px;
+  width: auto;
   height: 90px;
   border-radius: 50%;
 }
